@@ -46,14 +46,15 @@ src/
 
 1. `Home.jsx` fetch `GET /api/products` (endpoint publik).
 2. Tambah ke keranjang → disimpan di `CartContext` (hilang saat refresh browser).
-3. Checkout → kalau belum login, diarahkan ke halaman login dulu.
+3. Checkout → request tetap terkirim meski belum login; kalau token tidak ada/invalid,
+   backend menolak (401) dan pesan error ditampilkan di form checkout.
 4. `Checkout.jsx` kirim `POST /api/orders/checkout` dengan Bearer token JWT.
 5. Backend validasi stok & hitung diskon aktif, lalu mengembalikan detail order.
 
 ## Project Terkait
 
 - **[Clearance API](https://github.com/wiwinwidiaaan/clearance-api)** — backend ASP.NET Core
-- **Clearance Mobile** — React Native (Android) dengan notifikasi flash-sale
+- **[Clearance Mobile](https://github.com/wiwinwidiaaan/clearance-mobile)** — React Native (Android) dengan notifikasi flash-sale
 
 ## Lisensi
 
